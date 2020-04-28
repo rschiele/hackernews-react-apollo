@@ -2,9 +2,12 @@ async function feed(parent, args, context) {
   const count = await context.prisma
     .linksConnection({
       where: {
-        OR: [
-          { description_contains: args.filter },
-          { url_contains: args.filter },
+        OR: [{
+            description_contains: args.filter
+          },
+          {
+            url_contains: args.filter
+          },
         ],
       },
     })
@@ -12,9 +15,12 @@ async function feed(parent, args, context) {
     .count()
   const links = await context.prisma.links({
     where: {
-      OR: [
-        { description_contains: args.filter },
-        { url_contains: args.filter },
+      OR: [{
+          description_contains: args.filter
+        },
+        {
+          url_contains: args.filter
+        },
       ],
     },
     skip: args.skip,
@@ -28,5 +34,6 @@ async function feed(parent, args, context) {
 }
 
 module.exports = {
-  feed,
+  info: "Big fat hogs",
+  feed
 }
