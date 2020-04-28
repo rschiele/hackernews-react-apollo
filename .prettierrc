@@ -12,10 +12,7 @@
   "requirePragma": false,
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", ".js", ".jsx"],
-      "options": {
-        "parser": "typescript"
-      }
+      "files": [".js", ".jsx"]
     }
   ]
 }
